@@ -36,7 +36,7 @@ below:
 The states of the **LED 1** and **LED 2** are modified depending on the actions
 available for the user.
 
-Detailed state diagram can be found on this page section :ref:`on this page section<state_sequence_details>`.
+Detailed state diagram can be found :ref:`on this page section<state_sequence_details>`.
 
 Controls
 ^^^^^^^^
@@ -106,7 +106,13 @@ variables defined in the configuration (see :ref:`Configure` below):
   the orientation is automatically chosen depending on the resolution.
 
 .. note:: The resolution is an important parameter, it is responsible for the quality of the final
-          picture. Have a look to `picamera possible resolutions <http://picamera.readthedocs.io/en/latest/fov.html#sensor-modes>`_ .
+          picture. For ``Raspberry Pi`` camera, see the list of
+          `picamera possible resolutions <http://picamera.readthedocs.io/en/latest/fov.html#sensor-modes>`_ .
+
+          For ``gphoto2`` camera, the possible resolutions can be listed by executeing
+          the following command (adapt device path as needed)::
+
+            v4l2-ctl --list-formats-ext -d /dev/video0
 
 Captures effects
 ^^^^^^^^^^^^^^^^
@@ -192,8 +198,8 @@ Use the script :ref:`pibooth-fonts<scripts>` to list all available system fonts.
 GUI translations
 ^^^^^^^^^^^^^^^^
 
-The graphical interface texts are available in 8 languages by default: Danish, Dutch, English,
-French, German, Hungarian, Norwegian and Spanish. The default translations can be easily edited using the command:
+The graphical interface texts are available in 9 languages by default: Danish, Dutch, English,
+French, German, Hungarian, Italian, Norwegian and Spanish. The default translations can be easily edited using the command:
 
 .. code-block:: bash
 
